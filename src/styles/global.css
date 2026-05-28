@@ -59,7 +59,7 @@ body {
 .logo-product {
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text);
