@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYDRATEST — Skin Diagnostic</title>
+  <meta name="description" content="Enter your HYDRATEST readings to receive personalised skincare recommendations and routine guidance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,200&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/global.css">
+  <link rel="stylesheet" href="src/styles/home.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="logo" href="/">
+      <span class="logo-product">HYDRA<span>TEST</span></span>
+    </a>
+    <div class="nav-right">Skin Diagnostic</div>
+  </nav>
+
+  <div class="hero">
+
+    <!-- Left: form -->
+    <div class="hero-left">
+      <div class="fade-seq">
+        <div class="red-tag">Professional Skin Analysis</div>
+        <h1 class="hero-heading">Discover Your<br><em>Skin Profile</em></h1>
+        <p class="hero-desc">Enter your HYDRATEST readings to receive personalised skincare recommendations and a tailored daily routine.</p>
+
+        <form class="form-wrap" id="diagnostic-form" novalidate>
+
+          <div class="form-field">
+            <label class="form-label" for="hydration-input">Hydration Reading (%)</label>
+            <input
+              type="number"
+              id="hydration-input"
+              class="form-input"
+              placeholder="e.g. 38"
+              min="0" max="100"
+              inputmode="numeric"
+              autocomplete="off"
+            >
+            <div class="form-error" id="hydration-error" role="alert"></div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" id="oil-label">Oil Level — Select 1 to 5 Bars</label>
+            <div class="oil-bars-wrap" role="group" aria-labelledby="oil-label">
+              <div class="oil-bars" id="oil-bars">
+                <button class="oil-bar-btn" data-bar="1" type="button" aria-label="1 bar — Low"></button>
+                <button class="oil-bar-btn" data-bar="2" type="button" aria-label="2 bars — Medium"></button>
+                <button class="oil-bar-btn" data-bar="3" type="button" aria-label="3 bars — Normal"></button>
+                <button class="oil-bar-btn" data-bar="4" type="button" aria-label="4 bars — Normal/High"></button>
+                <button class="oil-bar-btn" data-bar="5" type="button" aria-label="5 bars — High"></button>
+              </div>
+              <div class="oil-scale">
+                <span>Low</span>
+                <span>Normal</span>
+                <span>High</span>
+              </div>
+              <div class="oil-reading" id="oil-reading">Tap a bar to select your oil level</div>
+              <div class="form-error" id="oil-error" role="alert"></div>
+            </div>
+          </div>
+
+          <button class="cta-btn" id="submit-btn" type="submit">
+            <span>View My Results</span>
+            <div class="cta-arrow"></div>
+          </button>
+
+        </form>
+
+        <div class="trust-strip">
+          <div class="trust-item">
+            <div class="trust-num">20</div>
+            <div class="trust-label">Skin Profiles</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num">5</div>
+            <div class="trust-label">Routine Steps</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num">100+</div>
+            <div class="trust-label">Ingredients Mapped</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: device visual -->
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-circle"></div>
+      <div class="hero-circle-2"></div>
+      <div class="hero-right-inner">
+        <div class="hero-device">
+          <svg width="52" height="210" viewBox="0 0 52 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="device-svg">
+            <defs>
+              <linearGradient id="deviceGrad" x1="8" y1="0" x2="52" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#7A1010"/>
+                <stop offset="30%"  stop-color="#C41015"/>
+                <stop offset="50%"  stop-color="#E8303A"/>
+                <stop offset="70%"  stop-color="#C01218"/>
+                <stop offset="100%" stop-color="#8A0E12"/>
+              </linearGradient>
+              <linearGradient id="capGrad" x1="8" y1="0" x2="52" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#888"/>
+                <stop offset="28%"  stop-color="#D4D4D4"/>
+                <stop offset="50%"  stop-color="#F0F0F0"/>
+                <stop offset="72%"  stop-color="#C8C8C8"/>
+                <stop offset="100%" stop-color="#909090"/>
+              </linearGradient>
+              <linearGradient id="collarGrad" x1="8" y1="0" x2="52" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#1A1A1A"/>
+                <stop offset="45%"  stop-color="#383838"/>
+                <stop offset="100%" stop-color="#181818"/>
+              </linearGradient>
+              <linearGradient id="screenGrad" x1="16" y1="42" x2="16" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#96E0EA" stop-opacity="0.65"/>
+                <stop offset="100%" stop-color="#4BBFCC" stop-opacity="0.18"/>
+              </linearGradient>
+              <!-- Screen pulse animation gradient -->
+              <linearGradient id="screenPulse" x1="16" y1="42" x2="16" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#B0EEFF" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#60D0E0" stop-opacity="0.4"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Cap (top, silver) -->
+            <rect x="18" y="0" width="16" height="16" rx="3" fill="url(#capGrad)"/>
+            <!-- Cap highlight -->
+            <rect x="19" y="1" width="6" height="4" rx="1.5" fill="rgba(255,255,255,0.55)"/>
+
+            <!-- Top collar (dark band) -->
+            <rect x="8" y="14" width="36" height="10" rx="2" fill="url(#collarGrad)"/>
+            <rect x="8" y="14" width="36" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+            <rect x="8" y="22" width="36" height="2" fill="rgba(0,0,0,0.45)"/>
+
+            <!-- Main body -->
+            <rect x="8" y="23" width="36" height="162" rx="4" fill="url(#deviceGrad)"/>
+            <!-- Left highlight sheen -->
+            <rect x="9" y="25" width="5" height="158" rx="2.5" fill="rgba(255,255,255,0.07)"/>
+            <!-- Right edge shadow -->
+            <rect x="38" y="25" width="5" height="158" rx="2.5" fill="rgba(0,0,0,0.14)"/>
+
+            <!-- Screen bezel -->
+            <rect x="16" y="40" width="20" height="34" rx="2" fill="rgba(0,0,0,0.5)"/>
+            <!-- Screen glass (animated) -->
+            <rect x="17" y="41" width="18" height="32" rx="1.5" fill="url(#screenGrad)" class="screen-glass"/>
+            <!-- Screen glare -->
+            <rect x="18" y="42" width="8" height="5" rx="1" fill="rgba(255,255,255,0.22)"/>
+            <!-- Screen data lines -->
+            <rect x="19" y="55" width="16" height="1.5" rx="0.5" fill="rgba(255,255,255,0.28)" class="screen-line-1"/>
+            <rect x="19" y="59" width="11" height="1.5" rx="0.5" fill="rgba(255,255,255,0.2)"  class="screen-line-2"/>
+            <rect x="19" y="63" width="13" height="1.5" rx="0.5" fill="rgba(255,255,255,0.2)"  class="screen-line-3"/>
+            <rect x="19" y="67" width="9"  height="1.5" rx="0.5" fill="rgba(255,255,255,0.14)" class="screen-line-4"/>
+
+            <!-- Button -->
+            <circle cx="26" cy="96" r="4.5" fill="rgba(0,0,0,0.28)" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
+            <circle cx="26" cy="96" r="2.5" fill="rgba(255,255,255,0.16)"/>
+
+            <!-- Bottom collar (dark band, matching top) -->
+            <rect x="8" y="183" width="36" height="8" rx="2" fill="url(#collarGrad)"/>
+            <rect x="8" y="183" width="36" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+
+            <!-- Silver sensor cap (bottom) -->
+            <rect x="14" y="190" width="24" height="18" rx="3" fill="url(#capGrad)"/>
+            <!-- Sensor highlight -->
+            <ellipse cx="22" cy="193" rx="5" ry="2" fill="rgba(255,255,255,0.4)"/>
+            <!-- Sensor rounded bottom -->
+            <rect x="14" y="204" width="24" height="4" rx="2" fill="url(#capGrad)"/>
+            <rect x="14" y="207" width="24" height="1" rx="0.5" fill="rgba(0,0,0,0.2)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-stat hero-stat-1">
+        <div class="hero-stat-label">Hydration</div>
+        <div class="hero-stat-value">38%</div>
+      </div>
+      <div class="hero-stat hero-stat-2">
+        <div class="hero-stat-label">Oil Level</div>
+        <div class="hero-stat-value">3 Bars</div>
+      </div>
+    </div>
+
+  </div><!-- /hero -->
+
+  <script type="module" src="src/pages/home.js"></script>
+</body>
+</html>
