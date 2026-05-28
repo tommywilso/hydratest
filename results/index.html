@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Skin Profile — HYDRATEST</title>
+  <meta name="description" content="Your personalised skin diagnostic results and routine recommendations from HYDRATEST.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,200&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles/global.css">
+  <link rel="stylesheet" href="../src/styles/results.css">
+</head>
+<body>
+
+  <nav class="results-nav">
+    <a class="logo" href="/">
+      <span class="logo-product">HYDRA<span>TEST</span></span>
+    </a>
+    <a class="back-btn" href="/">← Retake Test</a>
+  </nav>
+
+  <!-- Results header -->
+  <div class="results-header">
+    <div class="results-header-inner">
+      <div class="red-tag" id="r-condition-tag">Skin Profile</div>
+      <h1 class="results-main-title" id="r-main-title">Your Skin Profile</h1>
+      <div class="readings-grid">
+        <div class="reading-cell">
+          <div class="reading-cell-label">Hydration</div>
+          <div class="reading-cell-value" id="r-hyd-val">—</div>
+          <div class="reading-cell-sub" id="r-hyd-level">—</div>
+        </div>
+        <div class="reading-cell">
+          <div class="reading-cell-label">Oil Level</div>
+          <div class="reading-cell-value" id="r-oil-display">—</div>
+          <div class="reading-cell-sub" id="r-oil-level">—</div>
+        </div>
+        <div class="reading-cell">
+          <div class="reading-cell-label">Condition</div>
+          <div class="reading-cell-value reading-cell-value--sm" id="r-cond-val">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results sections -->
+  <div class="results-body">
+
+    <section class="r-section reveal" aria-labelledby="story-heading">
+      <div class="r-eyebrow">What Your Skin Is Telling You</div>
+      <h2 class="r-section-title" id="story-heading" id="r-story-heading">Understanding Your Skin</h2>
+      <p class="r-body" id="r-story-body"></p>
+      <div class="indicators" id="r-indicators"></div>
+    </section>
+
+    <section class="r-section reveal" aria-labelledby="goals-heading">
+      <div class="r-eyebrow">What To Aim For</div>
+      <h2 class="r-section-title" id="goals-heading">Your Skin Goals</h2>
+      <p class="r-body" id="r-aim-body"></p>
+    </section>
+
+    <section class="r-section reveal" aria-labelledby="routine-heading">
+      <div class="r-eyebrow">Routine Builder</div>
+      <h2 class="r-section-title" id="routine-heading">Your Daily Ritual</h2>
+      <div class="routine-list" id="r-routine" role="list"></div>
+    </section>
+
+    <section class="r-section reveal" aria-labelledby="ingredients-heading">
+      <div class="r-eyebrow">Ingredient Spotlight</div>
+      <h2 class="r-section-title" id="ingredients-heading">Key Actives For Your Skin</h2>
+      <p class="r-body r-body--flush">Selected based on your exact hydration and oil readings.</p>
+      <div class="ingredients-grid" id="r-ingredients"></div>
+    </section>
+
+    <section class="r-section reveal" aria-labelledby="note-heading">
+      <div class="r-eyebrow">Clinical Note</div>
+      <div class="expert-note">
+        <div class="expert-note-label" id="note-heading">Expert Insight</div>
+        <p class="expert-note-text" id="r-note"></p>
+      </div>
+    </section>
+
+  </div><!-- /results-body -->
+
+  <footer class="results-footer">
+    <div class="results-footer-inner">
+      <div class="footer-text-block">
+        <div class="red-tag">Next Step</div>
+        <h2 class="footer-title">Ready To Begin<br>Your Ritual?</h2>
+        <p class="footer-sub">Speak to a HYDRATEST consultant in-store for personalised product pairings tailored to your exact readings.</p>
+      </div>
+      <div class="footer-btns">
+        <a class="btn-red" href="/">Retake Test</a>
+        <button class="btn-ghost" type="button" onclick="window.print()">Save Results</button>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../src/pages/results.js"></script>
+</body>
+</html>
